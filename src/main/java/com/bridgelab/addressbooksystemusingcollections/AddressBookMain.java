@@ -11,6 +11,7 @@ public class AddressBookMain
         scanner = new Scanner(System.in);
     }
 
+
     public void chooseOption()
     {
         AddressBookService addressBookService = new AddressBookService();
@@ -30,7 +31,9 @@ public class AddressBookMain
                     9.Read Data From File:
                     10.Write To CSVFile:
                     11.Read From CSVFile:
-                    12.Exit:
+                    12.Write TO JSONFile:
+                    13.Read From JSONFile:
+                    14.Exit:
                     """);
             int userInput = scanner.nextInt();
             switch (userInput)
@@ -82,6 +85,14 @@ public class AddressBookMain
                     addressBookService.readFromCsvFile();
                     break;
                 case 12:
+                    //write to gson.
+                    addressBookService.writeToJson();
+                    break;
+                case 13:
+                    //read from gson.
+                    addressBookService.readFromJson();
+                    break;
+                case 14:
                     //Exit from program.
                     isExit = true;
                     break;
